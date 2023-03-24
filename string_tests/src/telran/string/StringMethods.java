@@ -1,50 +1,70 @@
 package telran.string;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
 public class StringMethods {
-	 public static void charAtMethod (String myStr) {
 
-		    char result = myStr.charAt(0);
-		    System.out.println( result);
-		  }
-		  
-		  public static void compareToMethod(String myStr1,String myStr2) {
 
-			    System.out.println(myStr1.compareTo(myStr2));
-			  }  
-		  public static void compareToIgnoreCaseMethod(String myStr1,String myStr2) {
+	@Test
+	void testCharAtMethod() {
+	 assertEquals("W",  "World".charAt(0));
+	}
 
-			  System.out.println(myStr1.compareToIgnoreCase(myStr2));
-			  }  
-		  public static void concatMethod(String firstName,String lastName) {
 
-			  System.out.println(firstName.concat(lastName));
-		  }
-		  public static void startWithMethod(String myStr1,String myStr2) {
+	@Test
+	void testCompareToMethod() {
+		assertEquals(0, "World".compareTo("World"));
+	}
 
-			  System.out.println(myStr1.startsWith(myStr2));   
-			  
-			  }  
-		  public static void endWithMethod(String myStr1,String myStr2) {
+	
 
-			  System.out.println(myStr1.endsWith(myStr2));   
-			 
-			  
-			  
-			  }  
-		  public static void containsMethod(String myStr1,String myStr2) {
+	@Test
+	void testCompareToIgnoreCaseMethod() {
+		assertEquals(0, "WORLD".compareToIgnoreCase("world"));
+	}
 
-			  System.out.println(myStr1.contains(myStr2));   
-			
-			  }  
-		  public static void indexOfMethod(String myStr1,String myStr2) {
+	
 
-			  System.out.println(myStr1.indexOf(myStr2));
-			  
-			  
-			  }  
-		  public static void lastIndexOfMethod(String myStr1,String myStr2) {
+	@Test
+	void testConcatMethod() {
+		assertEquals("Svetlana Doskochinskaia","Svetlana".concat("Doskochinskaia"));
+	}
 
-			  System.out.println(myStr1.lastIndexOf(myStr2));
-			 		  
-			  }  
+	
+	@Test
+	void testStartWithMethod() {
+		assertEquals(true, "World".startsWith("wor"));
+	}
+
+	
+
+	@Test
+	void testEndWithMethod() {
+		assertEquals(false, "World".endsWith("wor"));
+	}
+
+	
+
+	@Test
+	void testContainsMethod() {
+		assertEquals(true, "World".contains("wor"));
+	}
+
+	
+
+	@Test
+	void testIndexOfMethod() {
+		assertEquals(11, "this crazy world".indexOf("world"));
+	}
+
+	
+
+	@Test
+	void lastIndexOfMethod() {
+		assertEquals(11, "this crazy world".lastIndexOf("world"));
+	}
+
+	
 }
